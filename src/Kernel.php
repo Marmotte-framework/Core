@@ -31,6 +31,7 @@ use Marmotte\Brick\Bricks\BrickLoader;
 use Marmotte\Brick\Bricks\BrickManager;
 use Marmotte\Brick\Cache\CacheManager;
 use Marmotte\Brick\Mode;
+use Marmotte\Http\Request\ServerRequest;
 use Throwable;
 
 final class Kernel
@@ -46,6 +47,8 @@ final class Kernel
             $brick_loader->loadFromCache();
 
             $service_manager = $brick_manager->initialize($project_root, $config_dir);
+
+            $_request = $service_manager->getService(ServerRequest::class);
         } catch (Throwable $e) {
         }
     }
