@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a540da6fcaba5afdf0e2613df5971301",
+    "content-hash": "3c1742095061e18e8323d012aea935ea",
     "packages": [
         {
             "name": "composer/class-map-generator",
@@ -273,6 +273,64 @@
                 }
             ],
             "time": "2023-04-30T12:45:12+00:00"
+        },
+        {
+            "name": "marmotte/router",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Marmotte-framework/Router.git",
+                "reference": "ce98bd04708d77f91a2b8ab9045d9c4163e0367c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Marmotte-framework/Router/zipball/ce98bd04708d77f91a2b8ab9045d9c4163e0367c",
+                "reference": "ce98bd04708d77f91a2b8ab9045d9c4163e0367c",
+                "shasum": ""
+            },
+            "require": {
+                "marmotte/brick": "^1.2",
+                "marmotte/http": "^1.1",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.1",
+                "vimeo/psalm": "^5.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marmotte\\Router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Traini",
+                    "email": "kevin@ktraini.com"
+                }
+            ],
+            "description": "Main Router of Marmotte",
+            "homepage": "https://github.com/Marmotte-framework/Router",
+            "keywords": [
+                "framework",
+                "marmotte",
+                "router"
+            ],
+            "support": {
+                "issues": "https://github.com/Marmotte-framework/Router/issues",
+                "source": "https://github.com/Marmotte-framework/Router/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/gashmob",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2023-04-30T14:39:09+00:00"
         },
         {
             "name": "psr/http-factory",
