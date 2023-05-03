@@ -1,11 +1,5 @@
-# Brick template
+# Core
 
-Template for creating Brick for Marmotte framework.
-
-Please follow these steps :
-
-1. Create you project by clicking on <kbd>use template</kbd> button on GitHub.
-2. In `composer.json`, replace fields `name` and `description` with what you want.
-   And change the namespace for `autoload` and `autoload-dev` to your own namespace.
-3. Report namespace changes in each php files.
-4. You can begin to work!
+> One Brick to rule them all, One Brick to find them,   
+> One Brick to bring them all, and in the darkness bind them   
+> In the Land of PHP where the Shadows lie.

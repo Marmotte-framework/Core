@@ -1,14 +1,14 @@
 {
-    "name": "marmotte/brick-template",
-    "description": "Brick template",
+    "name": "marmotte/core",
+    "description": "Core of Marmotte framework",
     "type": "marmotte-brick",
     "keywords": [
         "marmotte",
-        "template",
+        "core",
         "brick"
     ],
-    "homepage": "https://github.com/Marmotte-framework/Brick-template",
-    "license": "UNLICENSE",
+    "homepage": "https://github.com/Marmotte-framework/Core",
+    "license": "MIT",
     "authors": [
         {
             "name": "Kevin Traini",
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Marmotte\\BrickName\\": "src/"
+            "Marmotte\\Core\\": "src/"
         },
         "exclude-from-classmap": [
             "tests/"
@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Marmotte\\BrickName\\": "tests/"
+            "Marmotte\\Core\\": "tests/"
         }
     },
     "scripts": {
