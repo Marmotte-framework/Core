@@ -152,16 +152,16 @@
         },
         {
             "name": "marmotte/brick",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Marmotte-framework/Brick.git",
-                "reference": "767bf5f8444494a62f3b6d074fab99a21ccce009"
+                "reference": "fb8c5938dcee55ca32caba5e8178557860d7da3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Marmotte-framework/Brick/zipball/767bf5f8444494a62f3b6d074fab99a21ccce009",
-                "reference": "767bf5f8444494a62f3b6d074fab99a21ccce009",
+                "url": "https://api.github.com/repos/Marmotte-framework/Brick/zipball/fb8c5938dcee55ca32caba5e8178557860d7da3d",
+                "reference": "fb8c5938dcee55ca32caba5e8178557860d7da3d",
                 "shasum": ""
             },
             "require": {
@@ -201,7 +201,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Marmotte-framework/Brick/issues",
-                "source": "https://github.com/Marmotte-framework/Brick/tree/v1.2.3"
+                "source": "https://github.com/Marmotte-framework/Brick/tree/v1.2.4"
             },
             "funding": [
                 {
@@ -209,7 +209,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-04-30T12:39:42+00:00"
+            "time": "2023-05-03T20:27:27+00:00"
         },
         {
             "name": "marmotte/http",
@@ -276,16 +276,16 @@
         },
         {
             "name": "marmotte/router",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Marmotte-framework/Router.git",
-                "reference": "ce98bd04708d77f91a2b8ab9045d9c4163e0367c"
+                "reference": "9435acf5773b38c8b1c4ba0a61e09d456fc0dbfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Marmotte-framework/Router/zipball/ce98bd04708d77f91a2b8ab9045d9c4163e0367c",
-                "reference": "ce98bd04708d77f91a2b8ab9045d9c4163e0367c",
+                "url": "https://api.github.com/repos/Marmotte-framework/Router/zipball/9435acf5773b38c8b1c4ba0a61e09d456fc0dbfd",
+                "reference": "9435acf5773b38c8b1c4ba0a61e09d456fc0dbfd",
                 "shasum": ""
             },
             "require": {
@@ -297,11 +297,14 @@
                 "phpunit/phpunit": "^10.1",
                 "vimeo/psalm": "^5.8"
             },
-            "type": "library",
+            "type": "marmotte-brick",
             "autoload": {
                 "psr-4": {
                     "Marmotte\\Router\\": "src/"
-                }
+                },
+                "exclude-from-classmap": [
+                    "tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -322,7 +325,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Marmotte-framework/Router/issues",
-                "source": "https://github.com/Marmotte-framework/Router/tree/v1.0.0"
+                "source": "https://github.com/Marmotte-framework/Router/tree/v1.0.2"
             },
             "funding": [
                 {
@@ -330,7 +333,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-04-30T14:39:09+00:00"
+            "time": "2023-05-04T16:42:55+00:00"
         },
         {
             "name": "psr/http-factory",
