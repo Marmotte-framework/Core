@@ -31,25 +31,33 @@ use Marmotte\Brick\Bricks\BrickLoader;
 use Marmotte\Brick\Bricks\BrickManager;
 use Marmotte\Brick\Cache\CacheManager;
 use Marmotte\Brick\Mode;
-use PHPUnit\Framework\TestCase;
+use Marmotte\Http\Request\ServerRequest;
+use Marmotte\Router\Router\Router;
+use RuntimeException;
+use Throwable;
 
-class LoadBrickTest extends TestCase
+final class Kernel
 {
-    public function testBrickCanBeLoaded(): void
+    public function run(string $project_root, string $config_dir, string $cache_dir, Mode $mode): void
     {
-        $brick_manager = new BrickManager();
-        $brick_loader  = new BrickLoader(
-            $brick_manager,
-            new CacheManager(mode: Mode::TEST)
-        );
-        $brick_loader->loadFromDir(__DIR__ . '/../src', 'marmotte/core');
-        $brick_loader->loadBricks();
-        $_service_manager = $brick_manager->initialize(__DIR__, __DIR__);
+        try {
+            $brick_manager = new BrickManager();
+            $brick_loader  = new BrickLoader(
+                $brick_manager,
+                new CacheManager($cache_dir, $mode)
+            );
+            $brick_loader->loadFromCache();
 
-        $bricks = $brick_manager->getBricks();
-        self::assertCount(3, $bricks);
-        self::assertNotNull($brick_manager->getBrick('marmotte/core'));
-        self::assertNotNull($brick_manager->getBrick('marmotte/http'));
-        self::assertNotNull($brick_manager->getBrick('marmotte/router'));
+            $service_manager = $brick_manager->initialize($project_root, $config_dir);
+
+            $request = $service_manager->getService(ServerRequest::class);
+            $router  = $service_manager->getService(Router::class);
+            if ($request === null || $router === null) {
+                throw new RuntimeException("Fail to load Services");
+            }
+
+            $router->route($request->getUri()->getPath());
+        } catch (Throwable $e) {
+        }
     }
 }
