@@ -56,7 +56,7 @@ final class Kernel
                 throw new RuntimeException("Fail to load Services");
             }
 
-            $router->route($request->getUri()->getPath());
+            $router->route($request->getUri()->getPath(), $request->getMethod());
         } catch (Throwable $e) {
         }
     }
