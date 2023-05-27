@@ -33,6 +33,7 @@ use Marmotte\Brick\Cache\CacheManager;
 use Marmotte\Brick\Mode;
 use Marmotte\Http\Request\ServerRequest;
 use Marmotte\Router\Router\Router;
+use Marmotte\Teng\Engine;
 use RuntimeException;
 use Throwable;
 
@@ -52,12 +53,21 @@ final class Kernel
 
             $request = $service_manager->getService(ServerRequest::class);
             $router  = $service_manager->getService(Router::class);
-            if ($request === null || $router === null) {
+            $teng    = $service_manager->getService(Engine::class);
+            if ($request === null || $router === null || $teng === null) {
                 throw new RuntimeException("Fail to load Services");
             }
 
-            $router->route($request->getUri()->getPath());
+            $teng->addValue('site', [
+                'method' => $request->getMethod(),
+                'uri'    => (string) $request->getUri()
+            ]);
+
+            $router->route($request->getUri()->getPath(), $request->getMethod());
         } catch (Throwable $e) {
+            if ($mode !== Mode::PROD) {
+                echo $e->getMessage() . "\n" . $e->getTraceAsString();
+            }
         }
     }
 }

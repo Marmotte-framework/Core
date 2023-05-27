@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.1
+
+*2023-05-27*
+
+- Update dependencies
+- Add init values for Teng
+
 ## v1.0.0
 
 *2023-05-04*

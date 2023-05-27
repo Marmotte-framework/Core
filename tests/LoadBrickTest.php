@@ -47,9 +47,10 @@ class LoadBrickTest extends TestCase
         $_service_manager = $brick_manager->initialize(__DIR__, __DIR__);
 
         $bricks = $brick_manager->getBricks();
-        self::assertCount(3, $bricks);
+        self::assertCount(4, $bricks);
         self::assertNotNull($brick_manager->getBrick('marmotte/core'));
         self::assertNotNull($brick_manager->getBrick('marmotte/http'));
         self::assertNotNull($brick_manager->getBrick('marmotte/router'));
+        self::assertNotNull($brick_manager->getBrick('marmotte/teng'));
     }
 }
