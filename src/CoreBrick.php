@@ -43,6 +43,10 @@ final class CoreBrick implements Brick
             'method' => $request->getMethod(),
             'uri'    => (string) $request->getUri()
         ]);
+        $teng->addFunction(
+            'asset',
+            static fn(string $asset) => (string) $request->getUri()->withPath($asset)
+        );
 
         $router->route($request->getUri()->getPath(), $request->getMethod());
     }
