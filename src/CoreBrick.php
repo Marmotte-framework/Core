@@ -28,7 +28,26 @@ declare(strict_types=1);
 namespace Marmotte\Core;
 
 use Marmotte\Brick\Brick;
+use Marmotte\Http\Request\ServerRequest;
+use Marmotte\Router\Router\Router;
+use Marmotte\Teng\Engine;
 
 final class CoreBrick implements Brick
 {
+    public function init(
+        ServerRequest $request,
+        Router        $router,
+        Engine        $teng,
+    ): void {
+        $teng->addValue('site', [
+            'method' => $request->getMethod(),
+            'uri'    => (string) $request->getUri()
+        ]);
+        $teng->addFunction(
+            'asset',
+            static fn(string $asset) => (string) $request->getUri()->withPath($asset)
+        );
+
+        $router->route($request->getUri()->getPath(), $request->getMethod());
+    }
 }

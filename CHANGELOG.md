@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0
+
+*2023-05-28*
+
+- Add function `asset` to Teng
+
 ## v1.0.1
 
 *2023-05-27*
